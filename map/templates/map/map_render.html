@@ -1,0 +1,68 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+       <link rel="stylesheet" href="{% static 'map/css/map.css' %}">
+    <title>{{ title }}</title>
+       <style>
+    html,body {overflow:hidden}
+    </style>
+    <script>
+    document.onmousewheel = document.onwheel = function() {
+    return false;
+    };
+
+    document.addEventListener ("MozMousePixelScroll",
+    function() { return false }, false);
+
+    document.onkeydown = function(e) {
+    if (e.keyCode >= 33 && e.keyCode <= 40) return false;
+    }
+    </script>
+  </head>
+
+<div class="parent">
+    {{ my_map|safe }}
+  <div class="child">
+   <b>Сurrent period :</b> <b>{{ period|safe }}</b>
+    <select class="selectpicker" onchange="location = this.options[this.selectedIndex].value;" data-width="auto" data-title="Manage entries" data-style="btn-sm btn-info">
+      <option selected><b>Select period</b></option>
+      <option value="http://127.0.0.1:8000/maps/0/">Now(Test_1)</option>
+      <option value="http://127.0.0.1:8000/maps/1/">3h(Test_2)</option>
+      <option value="http://127.0.0.1:8000/maps/2/">12h(Test_3)</option>
+      <option value="http://127.0.0.1:8000/maps/3/">1d(Test_4)</option>
+      <option value="http://127.0.0.1:8000/maps/4/">3d(Test_5)</option>
+    </select>
+  </div>
+</div>
+
+
+
+<!--p><select class="selectpicker" onchange="location = this.options[this.selectedIndex].value;" data-width="auto" data-title="Manage entries" data-style="btn-sm btn-info">
+  <option selected>Open this select menu</option>
+  <option value="http://127.0.0.1:8000/maps/0/">Test_1(Now)</option>
+  <option value="http://127.0.0.1:8000/maps/1/">Test_2(3h)</option>
+  <option value="http://127.0.0.1:8000/maps/2/">Test_3(12h)</option>
+  <option value="http://127.0.0.1:8000/maps/3/">Test_4(1d)</option>
+  <option value="http://127.0.0.1:8000/maps/4/">Test_5(3d)</option>
+</select>
+
+<style>
+    html,body {overflow:hidden}
+    </style>
+    <script>
+    document.onmousewheel = document.onwheel = function() {
+    return false;
+    };
+
+    document.addEventListener ("MozMousePixelScroll",
+    function() { return false }, false);
+
+    document.onkeydown = function(e) {
+    if (e.keyCode >= 33 && e.keyCode <= 40) return false;
+    }
+    </script>
+    </p-->
