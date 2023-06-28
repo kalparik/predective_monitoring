@@ -122,7 +122,7 @@
 
  Клонируем с помощью следующей команды внутри консоли :
 
-    git clone https://github.com/zoza99/map_django_project.git
+    git clone git@github.com:kalparik/predective_monitoring.git
 
 2. Создаем и запускаем виртуальную среду с помощью следующего кода (не нужно если реализуем в PyCharm) :
    
